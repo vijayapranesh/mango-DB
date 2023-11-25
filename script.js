@@ -148,3 +148,80 @@ db.vijay.insertMany([
         fees: 500
       }
       
+      
+      // assigning other value in id by using $set and $unset operator
+
+      db.vijay.updateOne({  _id: ObjectId("6561d0a8ab20a729c5b69d91")},{
+        $set:{
+        email:"vijaypriya@gmail.com"
+        }
+        })
+        {
+          acknowledged: true,
+          insertedId: null,
+          matchedCount: 1,
+          modifiedCount: 1,
+          upsertedCount: 0
+        }
+
+
+
+
+        db.vijay.updateOne({ _id: ObjectId("6561d0a8ab20a729c5b69d92")},{
+          $unset:{
+          email:"abc@gmail.com"
+          }
+          })
+          {
+            acknowledged: true,
+            insertedId: null,
+            matchedCount: 1,
+            modifiedCount: 1,
+            upsertedCount: 0
+          }
+
+
+         // assigning other value in filter method using $set operator (updateOne,updateMany)
+
+         db.vijay.updateOne({batch:"be50"},{
+          $set:{
+          fees:1000
+          }
+          })
+          {
+            acknowledged: true,
+            insertedId: null,
+            matchedCount: 1,
+            modifiedCount: 0,
+            upsertedCount: 0
+          }
+         
+         
+         db.vijay.updateMany({batch:"be48"},{
+          $set:{
+          fees:10
+          }
+          })
+          {
+            acknowledged: true,
+            insertedId: null,
+            matchedCount: 2,
+            modifiedCount: 2,
+            upsertedCount: 0
+          }
+
+
+          // delete data (one or many)
+
+          db.vijay.deleteOne({_id: ObjectId("6561d0a8ab20a729c5b69d95")})
+          {
+            acknowledged: true,
+            deletedCount: 1
+          }
+
+          
+          db.vijay.deleteMany({batch:"be49"})
+          {
+            acknowledged: true,
+            deletedCount: 2
+          }
