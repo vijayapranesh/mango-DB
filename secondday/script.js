@@ -360,7 +360,7 @@ db.vijay.find({email:/.*gmail.com*./})
 
 //get the data by particular key ($exists)
 
-db.vijay.find({price:{$exists:1}})
+db.vijay.find({price:{$exists:1}})      (1=true, 0=false)
 
 {
   _id: ObjectId("656367d5ac1455cd8c4d097b"),
