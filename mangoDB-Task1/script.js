@@ -5,10 +5,9 @@
 For the following question write the corresponding MongoDB queries
 
 
-=> db.task1.insertMany(given data)
 
-1.Find all the information about each products => db.task1.find({})
 
+1.Find all the information about each products
 2.Find the product price which are between 400 to 800 
 3.Find the product price which are not between 400 to 600
 4.List the four product which are grater than 500 in price 
